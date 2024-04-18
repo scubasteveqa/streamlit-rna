@@ -1,7 +1,7 @@
 import pandas as pd
-import psycopg2
-import psycopg2.extras
-import sqlalchemy
+#import psycopg2
+#import psycopg2.extras
+#import sqlalchemy
 import streamlit as st
 import pydoc    
 
