@@ -12,7 +12,7 @@ def get_connection():
     #    "postgresql+psycopg2://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk/pfmegrnargs")
 
     
-con=pyodbc.connect(driver='{postgresql}',
+    con=pyodbc.connect(driver='{postgresql}',
                    database='pfmegrnargs',
                    uid='reader',
                    pwd='NWDMCE5xdipIjRrp',
