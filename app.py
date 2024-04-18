@@ -7,8 +7,14 @@ import streamlit as st
 
 def get_connection():
     # Connect to Database
-    engine = sqlalchemy.create_engine(
-        "postgresql+psycopg2://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk/pfmegrnargs")
+    #engine = sqlalchemy.create_engine(
+    #    "postgresql+psycopg2://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk/pfmegrnargs")
+
+    con <- dbConnect(odbc::odbc(), Driver = "postgresql", Server = "hh-pgsql-public.ebi.ac.uk", 
+    Port = "5432", Database = "pfmegrnargs", UID = "reader", PWD = "NWDMCE5xdipIjRrp", timeout = 10
+    
+    #PWD = Sys.getenv("CONNECTION_RNA_CENTRAL_PASSWORD"), BoolsAsChar = "NWDMCE5xdipIjRrp", 
+    #timeout = 10)
 
     # retrieve a table from the database databases
     query = "SELECT * FROM auth_permission"
