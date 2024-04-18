@@ -2,7 +2,6 @@ import pandas as pd
 import streamlit as st
 import pyodbc
 
-#def get_connection():
 # Connect to Database 
 con=pyodbc.connect(driver='postgresql',
            database='pfmegrnargs',
@@ -21,5 +20,5 @@ df = pd.read_sql_query(query, engine)
 df
 
 
-if __name__ == "__main__":
-    get_connection()
+#if __name__ == "__main__":
+#    get_connection()
