@@ -18,7 +18,3 @@ df = pd.read_sql_query(query, engine)
 
 # Display the table
 df
-
-
-#if __name__ == "__main__":
-#    get_connection()
