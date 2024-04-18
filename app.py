@@ -3,6 +3,7 @@ import psycopg2
 import psycopg2.extras
 import sqlalchemy
 import streamlit as st
+import pydoc    
 
 
 def get_connection():
@@ -10,8 +11,13 @@ def get_connection():
     #engine = sqlalchemy.create_engine(
     #    "postgresql+psycopg2://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk/pfmegrnargs")
 
-    con <- dbConnect(odbc::odbc(), Driver = "postgresql", Server = "hh-pgsql-public.ebi.ac.uk", 
-    Port = "5432", Database = "pfmegrnargs", UID = "reader", PWD = "NWDMCE5xdipIjRrp", timeout = 10
+    
+con=pyodbc.connect(driver='{postgresql}',
+                   database='pfmegrnargs',
+                   uid='reader',
+                   pwd='NWDMCE5xdipIjRrp',
+                   server='hh-pgsql-public.ebi.ac.uk',
+                   port=5432)
     
     #PWD = Sys.getenv("CONNECTION_RNA_CENTRAL_PASSWORD"), BoolsAsChar = "NWDMCE5xdipIjRrp", 
     #timeout = 10)
