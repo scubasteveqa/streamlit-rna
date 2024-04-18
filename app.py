@@ -3,7 +3,7 @@ import pandas as pd
 #import psycopg2.extras
 #import sqlalchemy
 import streamlit as st
-import pydoc    
+#import pydoc    
 import pyodbc
 
 def get_connection():
