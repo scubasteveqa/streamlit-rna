@@ -3,7 +3,7 @@ import streamlit as st
 import pyodbc
 
 #def get_connection():
-    # Connect to Database 
+# Connect to Database 
 con=pyodbc.connect(driver='postgresql',
            database='pfmegrnargs',
            uid='reader',
@@ -12,13 +12,13 @@ con=pyodbc.connect(driver='postgresql',
            port=5432)
     
 
-    # retrieve a table from the database databases
-    query = "SELECT * FROM auth_permission"
+# retrieve a table from the database databases
+query = "SELECT * FROM auth_permission"
 
-    df = pd.read_sql_query(query, engine)
+df = pd.read_sql_query(query, engine)
 
-    # Display the table
-    df
+# Display the table
+df
 
 
 if __name__ == "__main__":
