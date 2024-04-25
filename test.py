@@ -3,7 +3,7 @@ import streamlit as st
 import pyodbc
 
 # Connect to Database 
-con=pyodbc.connect(driver='PostgreSQL',
+con=pyodbc.connect(driver='postgresql',
            database='pfmegrnargs',
            uid='reader',
            pwd='NWDMCE5xdipIjRrp',
