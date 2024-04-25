@@ -17,4 +17,4 @@ sql_query = "SELECT * FROM auth_permission"
 df = pd.read_sql_query(sql_query, con)
 
 # Display the table
-print(df)
+df
