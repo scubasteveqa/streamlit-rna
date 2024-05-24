@@ -2,6 +2,10 @@ import pandas as pd
 import streamlit as st
 import pyodbc
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file (if using .env)
+load_dotenv()
 
 # Retrieve environment variables
 driver = os.getenv('DB_DRIVER')
@@ -11,21 +15,17 @@ pwd = os.getenv('DB_PWD')
 server = os.getenv('DB_SERVER')
 port = os.getenv('DB_PORT')
 
-# Connect to Database 
-con=pyodbc.connect(
-    driver=driver,
-    database=database,
-    uid=uid,
-    pwd=pwd,
-    server=server,
-    port=port
-)
-    
+# Create the connection string for pyodbc
+connection_string = f'DRIVER={{{driver}}};DATABASE={database};UID={uid};PWD={pwd};SERVER={server};PORT={port}'
 
-# retrieve a table from the database databases
+# Connect to Database 
+con = pyodbc.connect(connection_string)
+
+# Retrieve a table from the database
 query = "SELECT * FROM auth_permission"
 
-df = pd.read_sql_query(query, engine)
+# Execute query and read into DataFrame
+df = pd.read_sql(query, con)
 
-# Display the table
-df
+# Display the table in Streamlit
+st.dataframe(df)
