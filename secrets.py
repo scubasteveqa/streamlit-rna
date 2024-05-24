@@ -2,18 +2,14 @@ import pandas as pd
 import streamlit as st
 import pyodbc
 import os
-from dotenv import load_dotenv
 
-# Load environment variables from .env file (if using .env)
-load_dotenv()
-
-# Retrieve environment variables
-driver = os.getenv('DB_DRIVER')
-database = os.getenv('DB_DATABASE')
-uid = os.getenv('DB_UID')
-pwd = os.getenv('DB_PWD')
-server = os.getenv('DB_SERVER')
-port = os.getenv('DB_PORT')
+# Retrieve environment variables directly
+driver = os.environ.get('DB_DRIVER')
+database = os.environ.get('DB_DATABASE')
+uid = os.environ.get('DB_UID')
+pwd = os.environ.get('DB_PWD')
+server = os.environ.get('DB_SERVER')
+port = os.environ.get('DB_PORT')
 
 # Create the connection string for pyodbc
 connection_string = f'DRIVER={{{driver}}};DATABASE={database};UID={uid};PWD={pwd};SERVER={server};PORT={port}'
