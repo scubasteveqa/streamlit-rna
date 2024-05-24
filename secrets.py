@@ -4,12 +4,12 @@ import pyodbc
 import os
 
 # Retrieve environment variables
-driver = os.environ('DB_DRIVER')
-database = os.environ('DB_DATABASE')
-uid = os.environ('DB_UID')
-pwd = os.environ('DB_PWD')
-server = os.environ('DB_SERVER')
-port = os.environ('DB_PORT')
+driver = os.getenv('DB_DRIVER')
+database = os.getenv('DB_DATABASE')
+uid = os.getenv('DB_UID')
+pwd = os.getenv('DB_PWD')
+server = os.getenv('DB_SERVER')
+port = os.getenv('DB_PORT')
 
 # Connect to Database 
 con=pyodbc.connect(
